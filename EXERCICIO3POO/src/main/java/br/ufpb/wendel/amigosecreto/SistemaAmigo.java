@@ -26,7 +26,7 @@ public class SistemaAmigo extends Amigo  {
     }
     public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws AmigoInexistenteException, AmigoNaoSorteadoExcepetion{
 
-    }
+    } //teste do commit
 
 
 
