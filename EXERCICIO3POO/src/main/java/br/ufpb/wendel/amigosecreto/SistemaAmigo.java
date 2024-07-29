@@ -15,6 +15,13 @@ public class SistemaAmigo extends Amigo  {
         return mensagensAnonimas;
     }
     public void configuraAmigoSecretoDe(String emailDaPessoa, String emailAmigoSorteado) throws AmigoInexistenteException{
+        for( Amigo a: amigos){
+            if(a.getEmail().equals(emailDaPessoa)){
+                a.setEmailAmigoSorteado(emailAmigoSorteado);
+
+            }
+        } throw new AmigoInexistenteException("Amigo Inexistente");
+
 
     }
     public List <Mensagem> pesquisaTodasAsMensagens(){
@@ -26,7 +33,7 @@ public class SistemaAmigo extends Amigo  {
     }
     public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws AmigoInexistenteException, AmigoNaoSorteadoExcepetion{
 
-    } //teste do commit roberto gayy
+    }
 
 
 
