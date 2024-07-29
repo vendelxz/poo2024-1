@@ -22,7 +22,6 @@ public class SistemaAmigo extends Amigo  {
             }
         } throw new AmigoInexistenteException("Amigo Inexistente");
 
-
     }
     public List <Mensagem> pesquisaTodasAsMensagens(){
         List<Mensagem> todasAsMensagens = new ArrayList<>();
