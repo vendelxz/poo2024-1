@@ -5,6 +5,8 @@ public class MensagemParaTodos extends Mensagem{
         // O construtor usa os atributos da classe mãe
     }
     public String getTextoCompletoAExibir(){
-        //Implementar o corpo
+        if(ehAnonima()){
+            return  "Mensagem para todos. Texto: "+ this.getTexto();
+        } return "Mensagem de: "+getEmailRemetente()+"Texto: "+getTexto();
     }
 }

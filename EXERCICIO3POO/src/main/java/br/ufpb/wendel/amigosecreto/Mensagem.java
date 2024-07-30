@@ -1,6 +1,6 @@
 package br.ufpb.wendel.amigosecreto;
 
-public class Mensagem {
+public abstract class Mensagem {
     private String texto;
     private String emailRemetente;
     private boolean anonima;
@@ -20,9 +20,9 @@ public class Mensagem {
     public void setTexto(String texto){
         this.texto = texto;
     }
-    public String getTextoCompletoAExibir(){
-        // Meteódo para ser implementado
-    }
+
+    public abstract String getTextoCompletoAExibir();
+
     public String getEmailRemetente(){
         return this.emailRemetente;
     }

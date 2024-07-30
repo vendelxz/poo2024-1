@@ -13,7 +13,9 @@ public class MensagemParaAlguem extends Mensagem{
         this.emailDestinatario = emailDestinatario;
     }
     public String getTextoCompletoAExibir(){
-        // Meteódo para ser implementado
+        if(ehAnonima()){
+            return "Mensagem para "+getEmailDestinatario()+" Texto: "+getTexto();
+        } return "Mensagem de: "+getEmailRemetente()+" para: "+getEmailDestinatario();
     }
 
 }

@@ -14,6 +14,20 @@ public class SistemaAmigo extends Amigo  {
         }
         return mensagensAnonimas;
     }
+
+    public void cadastraAmigo(String nome, String email){
+        Amigo amigo = new Amigo(nome, email);
+        amigos.add(amigo);
+    }
+
+    public void enviarMensagemParaTodos(String texto, String emailRemetente, boolean ehAnonima){
+        MensagemParaTodos m = new MensagemParaTodos(texto, emailRemetente, ehAnonima);
+        mensagens.add(m);
+    }
+    public void enviarMensagemParaAlguem(String texto, String emailRemetente, String emailDestinatario, boolean ehAnonima){
+        MensagemParaAlguem m = new MensagemParaAlguem(texto, emailRemetente, emailDestinatario, ehAnonima);
+        mensagens.add(m);
+    }
     public void configuraAmigoSecretoDe(String emailDaPessoa, String emailAmigoSorteado) throws AmigoInexistenteException{
         for( Amigo a: amigos){
             if(a.getEmail().equals(emailDaPessoa)){
@@ -31,7 +45,14 @@ public class SistemaAmigo extends Amigo  {
         return todasAsMensagens;
     }
     public String pesquisaAmigoSecretoDe(String emailDaPessoa) throws AmigoInexistenteException, AmigoNaoSorteadoExcepetion{
+        for (Amigo a: amigos){
+            if(a.getEmail().equals(emailDaPessoa)){
 
+                if(a.getEmailAmigoSorteado()!= null){
+                    return a.getEmailAmigoSorteado();
+                } throw new AmigoNaoSorteadoExcepetion("Amigo não sorteado!");
+            }
+        } throw new AmigoInexistenteException("Amigo inexistente");
     }
 
 
