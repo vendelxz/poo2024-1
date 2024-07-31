@@ -30,6 +30,6 @@ public class TestaSistemaAmigoGUI {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }catch (AmigoNaoSorteadoExcepetion e){
             JOptionPane.showMessageDialog(null, e.getMessage());
-        }
+        } //concluido
     }
 }
