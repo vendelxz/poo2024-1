@@ -1,7 +1,8 @@
 package br.ufpb.wendel.amigosecreto;
 
 import javax.swing.*;
-
+import java.util.ArrayList;
+import java.util.List;
 public class TestaSistemaAmigo {
     public static void main(String[] args){
         SistemaAmigo sistema = new SistemaAmigo();
@@ -17,7 +18,12 @@ public class TestaSistemaAmigo {
             sistema.enviarMensagemParaAlguem("Olá","maria@gmail.com","jose@gmail.com",true);
             sistema.enviarMensagemParaTodos("Olá","maria@gmail.com",true);
             //letra e
-
+            List<Mensagem> mensagemList = new ArrayList<>(sistema.pesquisaTodasAsMensagens());
+            for(Mensagem m:mensagemList ){
+                if(m.ehAnonima()){
+                    System.out.println(m.getTextoCompletoAExibir());
+                }
+            }
             //letra f
            if(sistema.pesquisaAmigoSecretoDe("jose@gmail.com").equals("maria@gmail.com")){
                System.out.println("OK!");
